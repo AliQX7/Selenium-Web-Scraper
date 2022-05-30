@@ -21,8 +21,13 @@ try:
     element = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.CLASS_NAME, "OztcRd"))
     )
+
+    names = driver.find_elements_by_class_name("OztcRd")
+    for name in names:
+        print(name.text)
 finally:
-    driver.quit()
+    # driver.quit()
+    pass
 
 
 # time.sleep(5)
