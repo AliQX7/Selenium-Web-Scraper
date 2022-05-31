@@ -1,1 +1,3 @@
-"# Selenium-Web-Scaper" 
+# Selenium-Webscaper
+
+A simple Selenium based webscraper.
