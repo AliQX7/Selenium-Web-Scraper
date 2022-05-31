@@ -1,1 +1,2 @@
 selenv/
+webscraper_results/
