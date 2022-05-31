@@ -31,7 +31,7 @@ def scroll_to_bottom():
  
         # Click on "Show more results"
         try:
-            driver.find_element_by_css_selector(".YstHxe input").click()
+            driver.find_element(By.CSS_SELECTOR, ".YstHxe input").click()
             time.sleep(3)
         except:
             pass
@@ -50,9 +50,10 @@ time.sleep(2)
 for i in range(50):
     try:
         image = driver.find_element(By.XPATH, '//*[@id="islrg"]/div[1]/div['+str(i)+']/a[1]/div[1]/img')
-        image.screenshot("C:/Users/Nexus/Documents/Selenium Webscrapper/webscraper_results/" + query + str(i) + ".png")
+        image.screenshot("C:/Users/Nexus/Documents/Selenium Webscrapper/webscraper_results/" + query + "_" + str(i) + ".png")
     except:
         continue
+
 
 
 
