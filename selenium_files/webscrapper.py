@@ -16,8 +16,8 @@ search_url_element = driver.find_element(by=By.NAME, value="q")
 search_url_element.send_keys(query)
 search_url_element.send_keys(Keys.RETURN)
 
+
 def scroll_to_bottom():
- 
     last_height = driver.execute_script('\
     return document.body.scrollHeight')
  
