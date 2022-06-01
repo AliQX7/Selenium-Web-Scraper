@@ -47,6 +47,7 @@ def scroll_to_bottom():
 scroll_to_bottom()
 time.sleep(2)
 
+# Parse through the first 50 images on the webpage and save them as screenshots.
 for i in range(50):
     try:
         image = driver.find_element(By.XPATH, '//*[@id="islrg"]/div[1]/div['+str(i)+']/a[1]/div[1]/img')
