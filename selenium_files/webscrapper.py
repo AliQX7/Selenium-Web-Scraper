@@ -11,23 +11,24 @@ import urllib
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
 driver.get("https://www.pakwheels.com/")
-query = "Cars"
-search_url_element = driver.find_element(by=By.NAME, value="q")
-search_url_element.send_keys(query)
-search_url_element.send_keys(Keys.RETURN)
+driver.maximize_window()
+# query = "Cars"
+# search_url_element = driver.find_element(by=By.NAME, value="q")
+# search_url_element.send_keys(query)
+# search_url_element.send_keys(Keys.RETURN)
 
 # To load the entire page we first scroll to the bottom. 
 def scroll_to_bottom():
     last_height = driver.execute_script('\
-    return document.body.scrollHeight')
+        return document.body.scrollHeight')
  
     while True:
         driver.execute_script('\
-        window.scrollTo(0,document.body.scrollHeight)')
+            window.scrollTo(0,document.body.scrollHeight)')
         time.sleep(3)
  
         new_height = driver.execute_script('\
-        return document.body.scrollHeight')
+            return document.body.scrollHeight')
  
         # Click on "Show more results"
         # try:
@@ -40,6 +41,27 @@ def scroll_to_bottom():
             break
         last_height = new_height
 
+def scroll_to_height(amount):
+    driver.execute_script('\
+        window.scrollTo(0,{})'.format(amount))
+
+scroll_to_height(700)
+
+one_thousandCC_cars_element = driver.find_element(By.XPATH, '//*[@id="browesCTGSlider"]/div[1]/ul[1]/li[1]/a/img')
+# two_thousandCC_cars_element = driver.find_element(By.XPATH, '//*[@id="browesCTGSlider"]/div[1]/ul[1]/li[2]/a/img')
+one_thousandCC_cars_element.click()
+
+ad_titles = driver.find_elements(By.CLASS_NAME, "car-name ad-detail-path")
+
+print(len(ad_titles))
+
+
+
+
+
+
+
+
 # element = WebDriverWait(driver, 10).until(
 #     EC.presence_of_element_located((By.CLASS_NAME, "OztcRd"))
 # )
@@ -51,4 +73,5 @@ def scroll_to_bottom():
 #         image.screenshot("C:/Users/Nexus/Documents/Selenium Webscrapper/webscraper_results/" + query + "_" + str(i) + ".png")
 #     except:
 #         continue
+
 
