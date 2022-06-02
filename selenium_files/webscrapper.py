@@ -10,7 +10,7 @@ import urllib
 
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
-driver.get("https://images.google.com/")
+driver.get("https://www.pakwheels.com/")
 query = "Cars"
 search_url_element = driver.find_element(by=By.NAME, value="q")
 search_url_element.send_keys(query)
@@ -30,11 +30,11 @@ def scroll_to_bottom():
         return document.body.scrollHeight')
  
         # Click on "Show more results"
-        try:
-            driver.find_element(By.CSS_SELECTOR, ".YstHxe input").click()
-            time.sleep(3)
-        except:
-            pass
+        # try:
+        #     driver.find_element(By.CSS_SELECTOR, ".YstHxe input").click()
+        #     time.sleep(3)
+        # except:
+        #     pass
  
         if new_height == last_height:
             break
@@ -44,19 +44,11 @@ def scroll_to_bottom():
 #     EC.presence_of_element_located((By.CLASS_NAME, "OztcRd"))
 # )
 
-scroll_to_bottom()
-time.sleep(2)
-
 # Parse through the first 50 images on the webpage and save them as screenshots.
-for i in range(50):
-    try:
-        image = driver.find_element(By.XPATH, '//*[@id="islrg"]/div[1]/div['+str(i)+']/a[1]/div[1]/img')
-        image.screenshot("C:/Users/Nexus/Documents/Selenium Webscrapper/webscraper_results/" + query + "_" + str(i) + ".png")
-    except:
-        continue
+# for i in range(50):
+#     try:
+#         image = driver.find_element(By.XPATH, '//*[@id="islrg"]/div[1]/div['+str(i)+']/a[1]/div[1]/img')
+#         image.screenshot("C:/Users/Nexus/Documents/Selenium Webscrapper/webscraper_results/" + query + "_" + str(i) + ".png")
+#     except:
+#         continue
 
-
-
-
-# time.sleep(5)
-# driver.quit()
