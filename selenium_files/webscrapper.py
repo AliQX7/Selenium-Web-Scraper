@@ -51,16 +51,13 @@ one_thousandCC_cars_element = driver.find_element(By.XPATH, '//*[@id="browesCTGS
 # two_thousandCC_cars_element = driver.find_element(By.XPATH, '//*[@id="browesCTGSlider"]/div[1]/ul[1]/li[2]/a/img')
 one_thousandCC_cars_element.click()
 
-ad_titles = driver.find_elements(By.CLASS_NAME, "car-name ad-detail-path")
+
+ad_titles = []
+for i in range(50):
+    ad_titles.append(driver.find_element(By.XPATH, '//*[@id="main_ad_6255096"]/div/div[2]/div[1]/div/div/a/h3'))
+    '//*[@id="main_ad_6203273"]/div/div[2]/div[1]/div/div/a/h3'
 
 print(len(ad_titles))
-
-
-
-
-
-
-
 
 # element = WebDriverWait(driver, 10).until(
 #     EC.presence_of_element_located((By.CLASS_NAME, "OztcRd"))
