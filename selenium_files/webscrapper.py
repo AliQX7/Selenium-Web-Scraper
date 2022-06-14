@@ -56,6 +56,7 @@ for i in range(50):
     ad_titles.append(driver.find_element(By.XPATH, '//*[@id="main_ad_6255096"]/div/div[2]/div[1]/div/div/a/h3'))
     '//*[@id="main_ad_6203273"]/div/div[2]/div[1]/div/div/a/h3'
 
+
 # element = WebDriverWait(driver, 10).until(
 #     EC.presence_of_element_located((By.CLASS_NAME, "OztcRd"))
 # )
