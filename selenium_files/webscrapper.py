@@ -46,7 +46,6 @@ def scroll_to_height(amount):
         window.scrollTo(0,{})'.format(amount))
 
 scroll_to_height(700)
-
 one_thousandCC_cars_element = driver.find_element(By.XPATH, '//*[@id="browesCTGSlider"]/div[1]/ul[1]/li[1]/a/img')
 # two_thousandCC_cars_element = driver.find_element(By.XPATH, '//*[@id="browesCTGSlider"]/div[1]/ul[1]/li[2]/a/img')
 one_thousandCC_cars_element.click()
