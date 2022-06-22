@@ -60,7 +60,7 @@ element = WebDriverWait(driver, 10).until(
     EC.presence_of_element_located((By.CLASS_NAME, "OztcRd"))
 )
 
-Parse through the first 50 images on the webpage and save them as screenshots.
+# Parse through the first 50 images on the webpage and save them as screenshots.
 for i in range(50):
     try:
         image = driver.find_element(By.XPATH, '//*[@id="islrg"]/div[1]/div['+str(i)+']/a[1]/div[1]/img')
