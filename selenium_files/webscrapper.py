@@ -30,12 +30,12 @@ def scroll_to_bottom():
         new_height = driver.execute_script('\
             return document.body.scrollHeight')
  
-        # Click on "Show more results"
-        # try:
-        #     driver.find_element(By.CSS_SELECTOR, ".YstHxe input").click()
-        #     time.sleep(3)
-        # except:
-        #     pass
+        Click on "Show more results"
+        try:
+            driver.find_element(By.CSS_SELECTOR, ".YstHxe input").click()
+            time.sleep(3)
+        except:
+            pass
  
         if new_height == last_height:
             break
