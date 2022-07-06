@@ -12,6 +12,10 @@ driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
 driver.get("https://www.pakwheels.com/")
 driver.maximize_window()
+# query = "Cars"
+# search_url_element = driver.find_element(by=By.NAME, value="q")
+# search_url_element.send_keys(query)
+# search_url_element.send_keys(Keys.RETURN)
 
 # To load the entire page we first scroll to the bottom. 
 def scroll_to_bottom():
