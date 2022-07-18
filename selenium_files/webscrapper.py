@@ -17,6 +17,35 @@ driver.maximize_window()
 # search_url_element.send_keys(query)
 # search_url_element.send_keys(Keys.RETURN)
 
+# To load the entire page we first scroll to the bottom. 
+def scroll_to_bottom():
+    last_height = driver.execute_script('\
+        return document.body.scrollHeight')
+ 
+    while True:
+        driver.execute_script('\
+            window.scrollTo(0,document.body.scrollHeight)')
+        time.sleep(3)
+ 
+        new_height = driver.execute_script('\
+            return document.body.scrollHeight')
+ 
+        # Click on "Show more results"
+        # try:
+        #     driver.find_element(By.CSS_SELECTOR, ".YstHxe input").click()
+        #     time.sleep(3)
+        # except:
+        #     pass
+ 
+        if new_height == last_height:
+            break
+        last_height = new_height
+
+def scroll_to_height(amount):
+    driver.execute_script('\
+        window.scrollTo(0,{})'.format(amount))
+
+
 scroll_to_height(700)
 one_thousandCC_cars_element = driver.find_element(By.XPATH, '//*[@id="browesCTGSlider"]/div[1]/ul[1]/li[1]/a/img')
 two_thousandCC_cars_element = driver.find_element(By.XPATH, '//*[@id="browesCTGSlider"]/div[1]/ul[1]/li[2]/a/img')
